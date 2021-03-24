@@ -2,6 +2,7 @@ package com.codeup.codeup_demo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -16,7 +17,7 @@ public class PostController {
     @GetMapping("/{id}")
     @ResponseBody
     public String viewIndividualPost() {
-        return "view an individual post";
+        return "view an individual post of {id}";
     }
 
     @GetMapping("/posts/create")
@@ -25,7 +26,7 @@ public class PostController {
         return "view the form for creating a post";
     }
 
-    @GetMapping("/posts/create")
+    @PostMapping("/posts/create")
     @ResponseBody
     public String createNewPost(){
         return "create a new post";
